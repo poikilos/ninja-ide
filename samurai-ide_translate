@@ -2,4 +2,4 @@
 SOURCES += ninja_ide/translations.py
 
 
-TRANSLATIONS = ninja.ts
+TRANSLATIONS = samurai-ide.ts
