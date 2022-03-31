@@ -10,18 +10,18 @@ help:
 
 
 unittest:
-	$(PYTEST) ninja_tests/unit
+	$(PYTEST) samurai_tests/unit
 
 pep8:
-	pycodestyle ninja_ide
+	pycodestyle samurai_ide
 
 flake8:
-	flake8 ninja_ide
+	flake8 samurai_ide
 
 lint: pep8 flake8
 
 rc:
-	pyrcc5 ninja_ide/nresources.qrc -o ninja_ide/nresources.py
+	pyrcc5 samurai_ide/nresources.qrc -o samurai_ide/nresources.py
 
 clean:
 	for i in $(CLEANUP_LIST); do find . -name "$$i" -delete; done
