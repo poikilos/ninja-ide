@@ -1,5 +1,5 @@
 # Samurai-IDE is the Same But More Active Involvement IDE
-[![Linux Tests](actions/workflows/linux.yml/badge.svg)](actions/workflows/linux.yml)
+[![Linux Tests](https://github.com/poikilos/samurai-ide/actions/workflows/linux.yml/badge.svg)](https://github.com/poikilos/samurai-ide/actions/workflows/linux.yml)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
  [Samurai-IDE](https://github.com/poikilos/samurai-ide) is a cross-platform integrated development environment (IDE) that allows developers to create applications for any purpose making the task of writing software easier and more enjoyable.
