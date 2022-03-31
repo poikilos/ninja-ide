@@ -1899,8 +1899,8 @@ Add Last Line Automatically</comment>
     <message>
         <location filename="ninja_ide/translations.py" line="461"/>
         <source>NINJA-IDE</source>
-        <comment>Use MiniMap 
- (Requires restart, 
+        <comment>Use MiniMap
+ (Requires restart,
  Opacity unsupported on OsX)</comment>
         <translation type="unfinished"></translation>
     </message>
@@ -2713,7 +2713,7 @@ Add Last Line Automatically</comment>
     <message>
         <location filename="ninja_ide/translations.py" line="701"/>
         <source>NINJA-IDE</source>
-        <comment>The name you have chosen is invalid. 
+        <comment>The name you have chosen is invalid.
 Please pick a different name.</comment>
         <translation type="unfinished"></translation>
     </message>

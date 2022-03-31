@@ -45,3 +45,17 @@ If you are interested in fixing issues and contributing directly to the code bas
 
 ## License
 -   **GPLv3+** *(GPLv3 or any other later version published by FSF at your option)*
+
+## Rebranding
+- Logo changes (via GIMP): Colors, Invert; Colors, Hue-Saturation, -144.9
+  - icon.png
+  - build_files/installer/windows/ninja.ico
+  - ninja_ide/images/icon.png
+  - not inverted, so hue 35.1 (= 180-144.9):
+    - ninja_ide/gui/qml/img/logo.png
+
+### Change letters only
+- ninja_ide/gui/qml/img/logo_black.png
+- [ ] ninja_ide/images/help/help_locator.png
+- [ ] ninja_ide/images/help/ninja_screenshot.png
+  - [ ] also rename it and change references to the name
