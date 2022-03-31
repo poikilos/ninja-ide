@@ -2,8 +2,8 @@ from PyQt5.QtGui import QIcon
 
 from PyQt5.QtCore import Qt
 
-from ninja_ide.core.file_handling import file_manager
-from ninja_ide.tools import ui_tools
+from samurai_ide.core.file_handling import file_manager
+from samurai_ide.tools import ui_tools
 
 
 class Mark(object):

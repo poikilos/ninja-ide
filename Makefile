@@ -10,7 +10,7 @@ help:
 
 
 unittest:
-	$(PYTEST) samurai_tests/unit
+	$(PYTEST) tests/unit
 
 pep8:
 	pycodestyle samurai_ide

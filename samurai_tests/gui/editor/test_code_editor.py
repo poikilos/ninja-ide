@@ -2,13 +2,13 @@ import pytest
 
 from PyQt5.QtGui import QTextCursor
 
-from ninja_ide.gui.editor.base import CodeEditor
+from samurai_ide.gui.editor.base import CodeEditor
 
 
 @pytest.fixture
 def code_editor():
     editor = CodeEditor()
-    editor.text = "NINJA-IDE is not just another IDE"
+    editor.text = "Samurai-IDE is not just another IDE"
     return editor
 
 
@@ -32,7 +32,7 @@ def test_replace_match(code_editor):
         word_old='just',
         word_new='JUST'
     )
-    assert code_editor.text == 'NINJA-IDE is not JUST another IDE'
+    assert code_editor.text == 'Samurai-IDE is not JUST another IDE'
 
 
 def test_replace_all(code_editor):

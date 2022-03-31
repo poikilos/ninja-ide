@@ -1,29 +1,29 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of NINJA-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (http://ninja-ide.org).
 #
-# NINJA-IDE is free software; you can redistribute it and/or modify
+# Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # any later version.
 #
-# NINJA-IDE is distributed in the hope that it will be useful,
+# Samurai-IDE is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with NINJA-IDE; If not, see <http://www.gnu.org/licenses/>.
+# along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 import ast
 
-from ninja_ide.intellisensei.analyzer import model
+from samurai_ide.intellisensei.analyzer import model
 
-from ninja_ide.tools.logger import NinjaLogger
+from samurai_ide.tools.logger import NinjaLogger
 
 logger_imports = NinjaLogger(
-    'ninja_ide.tools.introspection.obtaining_imports')
+    'samurai_ide.tools.introspection.obtaining_imports')
 logger_symbols = NinjaLogger(
-    'ninja_ide.tools.introspection.obtaining_symbols')
+    'samurai_ide.tools.introspection.obtaining_symbols')
 
 _map_type = {
     ast.Tuple: 'tuple',

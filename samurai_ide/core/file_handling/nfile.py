@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of NINJA-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (http://ninja-ide.org).
 #
-# NINJA-IDE is free software; you can redistribute it and/or modify
+# Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # any later version.
 #
-# NINJA-IDE is distributed in the hope that it will be useful,
+# Samurai-IDE is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with NINJA-IDE; If not, see <http://www.gnu.org/licenses/>.
+# along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 
 import os
 import shutil
@@ -25,15 +25,15 @@ from PyQt5.QtCore import QIODevice
 from PyQt5.QtCore import QTextStream
 from PyQt5.QtCore import pyqtSignal
 
-from ninja_ide import translations
+from samurai_ide import translations
 # FIXME: Obtain these form a getter
-from ninja_ide.core import settings
-from ninja_ide.tools.utils import SignalFlowControl
+from samurai_ide.core import settings
+from samurai_ide.tools.utils import SignalFlowControl
 from .file_manager import NinjaIOException, NinjaNoFileNameException, \
     get_file_encoding, get_basename, get_file_extension
 
-from ninja_ide.tools.logger import NinjaLogger
-logger = NinjaLogger('ninja_ide.core.file_handling.nfile')
+from samurai_ide.tools.logger import NinjaLogger
+logger = NinjaLogger('samurai_ide.core.file_handling.nfile')
 DEBUG = logger.debug
 
 """

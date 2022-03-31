@@ -18,7 +18,7 @@ from PyQt5.QtCore import (
     QFile,
 )
 
-from ninja_ide.tools.logger import NinjaLogger
+from samurai_ide.tools.logger import NinjaLogger
 
 # TODO: support more fonts
 # TODO: complete CHARMAP

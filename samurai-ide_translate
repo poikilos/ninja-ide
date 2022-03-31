@@ -1,5 +1,5 @@
 
-SOURCES += ninja_ide/translations.py
+SOURCES += samurai_ide/translations.py
 
 
 TRANSLATIONS = samurai-ide.ts

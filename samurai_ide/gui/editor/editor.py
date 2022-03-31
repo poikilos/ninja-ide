@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of NINJA-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (http://ninja-ide.org).
 #
-# NINJA-IDE is free software; you can redistribute it and/or modify
+# Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # any later version.
 #
-# NINJA-IDE is distributed in the hope that it will be useful,
+# Samurai-IDE is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with NINJA-IDE; If not, see <http://www.gnu.org/licenses/>.
+# along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 
 import re
 import sys
@@ -33,28 +33,28 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtCore import QTimer
 from PyQt5.QtCore import QEvent
 
-from ninja_ide import resources
-from ninja_ide.tools import utils
-from ninja_ide.core import settings
-from ninja_ide.gui.ide import IDE
-from ninja_ide.gui.editor import indenter
-from ninja_ide.gui.editor import highlighter
-from ninja_ide.gui.editor import base_editor
-from ninja_ide.gui.editor import scrollbar
-from ninja_ide.gui.editor import extra_selection
+from samurai_ide import resources
+from samurai_ide.tools import utils
+from samurai_ide.core import settings
+from samurai_ide.gui.ide import IDE
+from samurai_ide.gui.editor import indenter
+from samurai_ide.gui.editor import highlighter
+from samurai_ide.gui.editor import base_editor
+from samurai_ide.gui.editor import scrollbar
+from samurai_ide.gui.editor import extra_selection
 # Extensions
-from ninja_ide.gui.editor.extensions import symbol_highlighter
-from ninja_ide.gui.editor.extensions import line_highlighter
-from ninja_ide.gui.editor.extensions import margin_line
-from ninja_ide.gui.editor.extensions import indentation_guides
-from ninja_ide.gui.editor.extensions import braces
-from ninja_ide.gui.editor.extensions import quotes
+from samurai_ide.gui.editor.extensions import symbol_highlighter
+from samurai_ide.gui.editor.extensions import line_highlighter
+from samurai_ide.gui.editor.extensions import margin_line
+from samurai_ide.gui.editor.extensions import indentation_guides
+from samurai_ide.gui.editor.extensions import braces
+from samurai_ide.gui.editor.extensions import quotes
 # Side
-from ninja_ide.gui.editor.side_area import manager
-from ninja_ide.gui.editor.side_area import line_number_widget
-from ninja_ide.gui.editor.side_area import text_change_widget
-from ninja_ide.gui.editor.side_area import code_folding
-from ninja_ide.gui.editor.side_area import marker_widget
+from samurai_ide.gui.editor.side_area import manager
+from samurai_ide.gui.editor.side_area import line_number_widget
+from samurai_ide.gui.editor.side_area import text_change_widget
+from samurai_ide.gui.editor.side_area import code_folding
+from samurai_ide.gui.editor.side_area import marker_widget
 
 # TODO: separte this module and create a editor component
 
@@ -161,7 +161,7 @@ class NEditor(base_editor.BaseEditor):
         # Code folding
         self.side_widgets.add(code_folding.CodeFoldingWidget)
 
-        from ninja_ide.gui.editor import intellisense_assistant as ia
+        from samurai_ide.gui.editor import intellisense_assistant as ia
         self._iassistant = None
         intellisense = IDE.get_service("intellisense")
         if intellisense is not None:

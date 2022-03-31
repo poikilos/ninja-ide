@@ -25,6 +25,10 @@ pip install -r requirements.txt
 python3 samurai-ide.py
 ```
 
+### Migrating from Ninja-IDE
+```
+if [
+```
 
 ## Samurai-IDE contacts
 - [github.com/poikilos](https://github.com/poikilos)

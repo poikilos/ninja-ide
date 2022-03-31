@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of NINJA-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (http://ninja-ide.org).
 #
-# NINJA-IDE is free software; you can redistribute it and/or modify
+# Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # any later version.
 #
-# NINJA-IDE is distributed in the hope that it will be useful,
+# Samurai-IDE is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with NINJA-IDE; If not, see <http://www.gnu.org/licenses/>.
+# along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 
 from __future__ import absolute_import
 from __future__ import unicode_literals
@@ -21,10 +21,10 @@ from __future__ import unicode_literals
 from PyQt4.QtCore import QObject
 from PyQt4.QtCore import pyqtSignal
 
-from ninja_ide.core import settings
-from ninja_ide.core.file_handling import file_manager
-from ninja_ide.core import plugin_util
-from ninja_ide.gui.main_panel import itab_item
+from samurai_ide.core import settings
+from samurai_ide.core.file_handling import file_manager
+from samurai_ide.core import plugin_util
+from samurai_ide.gui.main_panel import itab_item
 
 
 ###############################################################################
@@ -34,7 +34,7 @@ from ninja_ide.gui.main_panel import itab_item
 
 class MainService(QObject):
     """
-    Main Interact whith NINJA-IDE
+    Main Interact whith Samurai-IDE
     """
     # SIGNALS
     editorKeyPressEvent = pyqtSignal("QEvent")
@@ -66,7 +66,7 @@ class MainService(QObject):
 
     def get_tab_manager(self):
         """
-        Returns the TabWidget (ninja_ide.gui.main_panel.tab_widget.TabWidget)
+        Returns the TabWidget (samurai_ide.gui.main_panel.tab_widget.TabWidget)
         subclass of QTabWidget
         """
         return self._main.actualTab
@@ -131,7 +131,7 @@ class MainService(QObject):
 
     def get_editor(self):
         """
-        Returns the actual editor (instance of ninja_ide.gui.editor.Editor)
+        Returns the actual editor (instance of samurai_ide.gui.editor.Editor)
         This method could return None
         """
         return self._main.get_current_editor()
@@ -324,7 +324,7 @@ class MenuAppService(QObject):
 #            and foo_project_handler instance controls the wizard
 #
 #        Note: project_type_handler SHOULD have a special interface see
-#        ninja_ide.core.plugin_interfaces
+#        samurai_ide.core.plugin_interfaces
 #        """
 #
 #
@@ -338,7 +338,7 @@ class MenuAppService(QObject):
 #        Then all symbols in .cpp files will be handle by cpp_symbols_handler
 #
 #        Note: symbols_handler SHOULD have a special interface see
-#        ninja_ide.core.plugin_interfaces
+#        samurai_ide.core.plugin_interfaces
 #        """
 
 
@@ -397,7 +397,7 @@ class ExplorerService(QObject):
         Then all symbols in .cpp files will be handle by cpp_symbols_handler
 
         Note: symbols_handler SHOULD have a special interface see
-        ninja_ide.core.plugin_interfaces
+        samurai_ide.core.plugin_interfaces
         """
         settings.set_symbols_handler(file_extension, symbols_handler)
 
@@ -411,7 +411,7 @@ class ExplorerService(QObject):
             and foo_project_handler instance controls the wizard
 
         Note: project_type_handler SHOULD have a special interface see
-        ninja_ide.core.plugin_interfaces
+        samurai_ide.core.plugin_interfaces
         """
         settings.set_project_type_handler(project_type, project_type_handler)
 
@@ -432,7 +432,7 @@ class ExplorerService(QObject):
     def get_opened_projects(self):
         """
         Return the opened projects in the Tree Project Explorer.
-        list of <ninja_ide.gui.explorer.tree_projects_widget.ProjectTree>
+        list of <samurai_ide.gui.explorer.tree_projects_widget.ProjectTree>
         """
         opened_projects = self._explorer.get_opened_projects()
         return opened_projects

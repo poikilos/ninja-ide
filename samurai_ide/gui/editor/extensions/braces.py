@@ -1,6 +1,6 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QTextCursor
-from ninja_ide.gui.editor.extensions import base
+from samurai_ide.gui.editor.extensions import base
 
 
 class AutocompleteBraces(base.Extension):

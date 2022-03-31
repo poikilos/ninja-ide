@@ -2,7 +2,7 @@ import pytest
 
 from PyQt5.QtWidgets import QPlainTextEdit
 
-from ninja_ide.gui.editor.indenter import base
+from samurai_ide.gui.editor.indenter import base
 
 
 class DummyEditor(QPlainTextEdit):

@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of NINJA-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (http://ninja-ide.org).
 #
-# NINJA-IDE is free software; you can redistribute it and/or modify
+# Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # any later version.
 #
-# NINJA-IDE is distributed in the hope that it will be useful,
+# Samurai-IDE is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with NINJA-IDE; If not, see <http://www.gnu.org/licenses/>.
+# along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 
 ###############################################################################
 # Virtualenv bootstraping
@@ -21,7 +21,7 @@
 
 from PyQt4.QtCore import QObject, SIGNAL, QThread
 from pip import main as pipmain
-from ninja_ide.resources import HOME_NINJA_PATH
+from samurai_ide.resources import HOME_NINJA_PATH
 import os
 import sys
 
@@ -31,8 +31,8 @@ from virtualenv import create_environment
 # def create_environment(home_dir, site_packages=False, clear=False,
 #                       prompt=None, search_dirs=None, never_download=False,
 
-from ninja_ide.tools.logger import NinjaLogger
-logger = NinjaLogger('ninja_ide.core.encapsulated_env.nenvironement')
+from samurai_ide.tools.logger import NinjaLogger
+logger = NinjaLogger('samurai_ide.core.encapsulated_env.nenvironement')
 # FIXME: Nothing is being printed, idk why
 DEBUG = logger.debug
 
@@ -73,7 +73,7 @@ except BaseException:
     from pip.utils import get_installed_distributions
 
 
-PLUGIN_QUERY = {"keywords": "ninja_ide plugin"}
+PLUGIN_QUERY = {"keywords": "samurai_ide plugin"}
 
 
 class AsyncRunner(QThread):
@@ -312,7 +312,7 @@ class BasePlugin(QObject):
 
 # This is how the directory structure should look
 """
-ninja_ide/
+samurai_ide/
     __init__.py
     contrib/
         __init__.py

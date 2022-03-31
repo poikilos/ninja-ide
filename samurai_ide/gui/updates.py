@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of NINJA-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (http://ninja-ide.org).
 #
-# NINJA-IDE is free software; you can redistribute it and/or modify
+# Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # any later version.
 #
-# NINJA-IDE is distributed in the hope that it will be useful,
+# Samurai-IDE is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with NINJA-IDE; If not, see <http://www.gnu.org/licenses/>.
+# along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 
 from urllib.request import urlopen
 import webbrowser
@@ -32,10 +32,10 @@ from PyQt5.QtCore import (
     pyqtSignal
 )
 
-import ninja_ide
-from ninja_ide import resources
-from ninja_ide.tools import json_manager
-from ninja_ide.tools.logger import NinjaLogger
+import samurai_ide
+from samurai_ide import resources
+from samurai_ide.tools import json_manager
+from samurai_ide.tools.logger import NinjaLogger
 
 logger = NinjaLogger(__name__)
 
@@ -91,23 +91,23 @@ class TrayIconUpdates(QSystemTrayIcon):
         self.ide_version = str(ide_version)
         self.download_link = str(download)
         try:
-            local_version = version.LooseVersion(ninja_ide.__version__)
+            local_version = version.LooseVersion(samurai_ide.__version__)
             web_version = version.LooseVersion(self.ide_version)
             if local_version < web_version:
                 if self.supportsMessages():
                     self.setup_menu(True)
-                    self.showMessage(self.tr("NINJA-IDE Updates"),
-                                     self.tr("New Version of NINJA-IDE"
+                    self.showMessage(self.tr("Samurai-IDE Updates"),
+                                     self.tr("New Version of Samurai-IDE"
                                              "\nAvailable: ") +
                                      self.ide_version +
                                      self.tr("\n\nCheck the Update Menu in "
-                                             "the NINJA-IDE "
+                                             "the Samurai-IDE "
                                              "System Tray icon to Download!"),
                                      QSystemTrayIcon.Information, 10000)
                 else:
                     button = QMessageBox.information(
-                        self.parent(), self.tr("NINJA-IDE Updates"),
-                        self.tr("New Version of NINJA-IDE\nAvailable: ") +
+                        self.parent(), self.tr("Samurai-IDE Updates"),
+                        self.tr("New Version of Samurai-IDE\nAvailable: ") +
                         self.ide_version)
                     if button == QMessageBox.Ok:
                         self._show_download()

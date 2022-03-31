@@ -4,7 +4,7 @@ Main module.
 Implement the central Checker class.
 Also, it models the Bindings and Scopes.
 """
-from ninja_ide.dependencies.pyflakes_mod import messages
+from samurai_ide.dependencies.pyflakes_mod import messages
 import __future__
 import doctest
 import os

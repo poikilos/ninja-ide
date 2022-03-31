@@ -1,22 +1,22 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of NINJA-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (http://ninja-ide.org).
 #
-# NINJA-IDE is free software; you can redistribute it and/or modify
+# Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # any later version.
 #
-# NINJA-IDE is distributed in the hope that it will be useful,
+# Samurai-IDE is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with NINJA-IDE; If not, see <http://www.gnu.org/licenses/>.
+# along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 import os
 import imp
-from ninja_ide import resources
+from samurai_ide import resources
 
 
 class ExtensionRegistry(type):
@@ -54,20 +54,20 @@ class Extension(metaclass=ExtensionRegistry):
 
     def __init__(self, neditor):
         self.__enabled = False
-        # NINJA-IDE NEditor ref
+        # Samurai-IDE NEditor ref
         self._neditor = neditor
 
     def text_cursor(self):
         return self._neditor.textCursor()
 
     def install(self):
-        """Turn on the extension on the NINJA-IDE editor
+        """Turn on the extension on the Samurai-IDE editor
         This method is called when extension is enabled.
         You may override it if you need to connect editor's signals
         """
 
     def shutdown(self):
-        """Turn off the extension on the NINJA-IDE editor
+        """Turn off the extension on the Samurai-IDE editor
         This method is called when extension is disabled.
         You may override it if you need to disconnect editor's signals
         """

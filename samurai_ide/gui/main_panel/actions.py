@@ -2,7 +2,7 @@
 
 from PyQt5.QtWidgets import QStyle
 
-from ninja_ide import translations
+from samurai_ide import translations
 
 # "connect": "function_name"
 

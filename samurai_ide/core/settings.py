@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of NINJA-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (http://ninja-ide.org).
 #
-# NINJA-IDE is free software; you can redistribute it and/or modify
+# Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # any later version.
 #
-# NINJA-IDE is distributed in the hope that it will be useful,
+# Samurai-IDE is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with NINJA-IDE; If not, see <http://www.gnu.org/licenses/>.
+# along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 
 
 import os
@@ -28,7 +28,7 @@ from PyQt5.QtCore import QSettings
 from PyQt5.QtCore import QDir
 from PyQt5.QtCore import QFileInfo
 
-from ninja_ide import resources
+from samurai_ide import resources
 
 
 ###############################################################################
@@ -583,6 +583,6 @@ def load_settings():
     #    'interface/notification_position', 1, type=int)
     #    'preferences/general/notification_color', "#222", type='QString')
     LAST_CLEAN_LOCATOR = qsettings.value("ide/cleanLocator", None)
-    from ninja_ide.extensions import handlers
+    from samurai_ide.extensions import handlers
     handlers.init_basic_handlers()
     clean_locator_db(qsettings)

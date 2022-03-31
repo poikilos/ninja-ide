@@ -1,5 +1,5 @@
-# ninja_ide specific
-ninja_ide/addins/plugins/*
+# samurai_ide specific
+samurai_ide/addins/plugins/*
 NINJA_IDE.egg-info/*
 build/*
 dist/*

@@ -1,4 +1,4 @@
-from ninja_tests.gui import editor
+from tests.gui import editor
 
 editor_ref = editor.create_editor()
 widget = editor_ref.side_widgets.get("MarkerWidget")

@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of NINJA-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (http://ninja-ide.org).
 #
-# NINJA-IDE is free software; you can redistribute it and/or modify
+# Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # any later version.
 #
-# NINJA-IDE is distributed in the hope that it will be useful,
+# Samurai-IDE is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with NINJA-IDE; If not, see <http://www.gnu.org/licenses/>.
+# along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 
 import collections
 
@@ -31,30 +31,30 @@ from PyQt5.QtCore import pyqtSignal
 
 from PyQt5.QtNetwork import QLocalServer
 
-from ninja_ide import resources
-from ninja_ide import translations
-from ninja_ide.core.file_handling import nfilesystem
-from ninja_ide.core import settings
-from ninja_ide.core import nsettings
-from ninja_ide.core import ipc
-from ninja_ide.core import interpreter_service
+from samurai_ide import resources
+from samurai_ide import translations
+from samurai_ide.core.file_handling import nfilesystem
+from samurai_ide.core import settings
+from samurai_ide.core import nsettings
+from samurai_ide.core import ipc
+from samurai_ide.core import interpreter_service
 
-from ninja_ide.gui import actions
-from ninja_ide.gui import notification
-from ninja_ide.gui.editor import neditable
-from ninja_ide.gui.explorer import nproject
-from ninja_ide.gui.dialogs import about_ninja
-from ninja_ide.gui.dialogs import session_manager
-from ninja_ide.gui.dialogs.preferences import preferences
-from ninja_ide.tools import ui_tools
+from samurai_ide.gui import actions
+from samurai_ide.gui import notification
+from samurai_ide.gui.editor import neditable
+from samurai_ide.gui.explorer import nproject
+from samurai_ide.gui.dialogs import about as about
+from samurai_ide.gui.dialogs import session_manager
+from samurai_ide.gui.dialogs.preferences import preferences
+from samurai_ide.tools import ui_tools
 
 ###############################################################################
 # LOGGER INITIALIZE
 ###############################################################################
 
-from ninja_ide.tools.logger import NinjaLogger
+from samurai_ide.tools.logger import NinjaLogger
 
-logger = NinjaLogger('ninja_ide.gui.ide')
+logger = NinjaLogger('samurai_ide.gui.ide')
 
 ###############################################################################
 # IDE: MAIN CONTAINER
@@ -90,7 +90,7 @@ class IDE(QMainWindow):
 
     def __init__(self, start_server=False):
         QMainWindow.__init__(self)
-        self.setWindowTitle('NINJA-IDE {Ninja-IDE Is Not Just Another IDE}')
+        self.setWindowTitle('Samurai-IDE {Samurai-IDE is the Same But More Active Involvement IDE}')
         self.setMinimumSize(750, 500)
         QToolTip.setFont(QFont(settings.FONT.family(), 10))
         # Load the size and the position of the main window
@@ -200,7 +200,7 @@ class IDE(QMainWindow):
         self.s_listener = None
         if start_server:
             self.s_listener = QLocalServer()
-            self.s_listener.listen("ninja_ide")
+            self.s_listener.listen("samurai_ide")
             self.s_listener.newConnection.connect(self._process_connection)
 
         # Load interpreters
@@ -510,14 +510,14 @@ class IDE(QMainWindow):
                                 {'session': self._session})
         else:
             self.setWindowTitle(
-                'NINJA-IDE {Ninja-IDE Is Not Just Another IDE}')
+                'Samurai-IDE {Samurai-IDE is the Same But More Active Involvement IDE}')
 
     Session = property(__get_session, __set_session)
 
     def change_window_title(self, text=""):
         """Change the title of the Application
 
-        display_name - [project] - {session} - NINJA-IDE
+        display_name - [project] - {session} - Samurai-IDE
         """
         title = []
         main_container = self.get_service("main_container")
@@ -533,7 +533,7 @@ class IDE(QMainWindow):
         if session is not None:
             title.append(translations.TR_SESSION_IDE_HEADER.format(session))
 
-        title.append("NINJA-IDE")
+        title.append("Samurai-IDE")
         formated_list = ["{}" for _ in title]
         self.setWindowTitle(" - ".join(formated_list).format(*title))
 
@@ -719,10 +719,10 @@ class IDE(QMainWindow):
         """Show About Qt Dialog."""
         QMessageBox.aboutQt(self, translations.TR_ABOUT_QT)
 
-    def show_about_ninja(self):
-        """Show About NINJA-IDE Dialog."""
-        about = about_ninja.AboutNinja(self)
-        about.show()
+    def show_about(self):
+        """Show About Samurai-IDE Dialog."""
+        aboutDlg = about.AboutProgram(self)
+        aboutDlg.show()
 
     #     """Show Python detection dialog for windows."""
     #     # TODO: Notify the user when no python version could be found

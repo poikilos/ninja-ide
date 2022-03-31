@@ -1,6 +1,6 @@
 from PyQt5.QtGui import QTextCursor
 from PyQt5.QtCore import Qt
-from ninja_ide.gui.editor.extensions import base
+from samurai_ide.gui.editor.extensions import base
 
 
 class AutocompleteQuotes(base.Extension):

@@ -22,7 +22,7 @@ Rectangle {
 
             Text {
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "Ninja IDE Is Not Just Another IDE"
+                text: "Samurai IDE is the Same But More Active Involvement IDE"
                 renderType: Text.NativeRendering
                 font.pointSize: 12
                 color: theme.StartPageAlternativeText

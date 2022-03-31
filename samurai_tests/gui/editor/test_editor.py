@@ -1,25 +1,25 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of NINJA-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (http://ninja-ide.org).
 #
-# NINJA-IDE is free software; you can redistribute it and/or modify
+# Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # any later version.
 #
-# NINJA-IDE is distributed in the hope that it will be useful,
+# Samurai-IDE is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with NINJA-IDE; If not, see <http://www.gnu.org/licenses/>.
+# along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 
 import pytest
 
 from PyQt5.QtGui import QTextCursor
 
-from ninja_ide.gui.editor import base
+from samurai_ide.gui.editor import base
 
 
 @pytest.fixture
@@ -136,10 +136,10 @@ def test_move_up_down(editor_fixture, text, lineno, up, expected):
 @pytest.mark.parametrize(
     'text, range_, up, expected',
     [
-        ('ninja is not just\nanother\nide\nprint', (0, 1), False,
-         'ide\nninja is not just\nanother\nprint'),
-        ('ninja is not just\nanother\nide\nprint', (2, 1), True,
-         'another\nide\nninja is not just\nprint')
+        ('samurai is the same but more active\ninvolvement\nide\nprint', (0, 1), False,
+         'ide\nsamurai is the same but more \nactive\nprint'),
+        ('samurai is the same but more active\ninvolvement\nide\nprint', (2, 1), True,
+         'another\nide\nsamurai is the same\nprint')
     ]
 )
 def test_move_up_down_selection(editor_fixture, text, range_, up, expected):

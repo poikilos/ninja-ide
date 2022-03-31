@@ -11,9 +11,9 @@ from PyQt5.QtGui import QKeySequence
 from PyQt5.QtQuickWidgets import QQuickWidget
 from PyQt5.QtCore import Qt
 
-from ninja_ide import resources
-from ninja_ide.gui.ide import IDE
-from ninja_ide.tools import ui_tools
+from samurai_ide import resources
+from samurai_ide.gui.ide import IDE
+from samurai_ide.tools import ui_tools
 
 
 class SplitOrientation(QDialog):

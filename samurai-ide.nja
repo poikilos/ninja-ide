@@ -1,9 +1,9 @@
 {
-  "name": "NINJA-IDE",
-  "description": "Ninja-IDE Is Not Just Another IDE",
-  "url": "http://ninja-ide.org",
+  "name": "Samurai-IDE",
+  "description": "Samurai-IDE is the Same But More Active Involvement IDE",
+  "url": "https://github.com/poikilos/samurai-ide",
   "license": "GNU General Public License v3",
-  "mainFile": "ninja-ide.py",
+  "mainFile": "samurai-ide.py",
   "project-type": "python",
   "supported-extensions": [
     ".py",

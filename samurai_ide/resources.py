@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of NINJA-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (http://ninja-ide.org).
 #
-# NINJA-IDE is free software; you can redistribute it and/or modify
+# Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # any later version.
 #
-# NINJA-IDE is distributed in the hope that it will be useful,
+# Samurai-IDE is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with NINJA-IDE; If not, see <http://www.gnu.org/licenses/>.
+# along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 
 import os
 import sys
@@ -24,7 +24,7 @@ from PyQt5.QtCore import QDir
 from PyQt5.QtCore import QSettings
 from PyQt5.QtCore import Qt
 
-from ninja_ide.core.file_handling import file_manager
+from samurai_ide.core.file_handling import file_manager
 
 ###############################################################################
 # CHECK PYTHON VERSION
@@ -49,7 +49,7 @@ if frozen in ('dll', 'console_exe', 'windows_exe'):
     # py2exe:
     PRJ_PATH = os.path.abspath(os.path.dirname(sys.executable))
 
-HOME_NINJA_PATH = os.path.join(HOME_PATH, ".ninja_ide")
+HOME_NINJA_PATH = os.path.join(HOME_PATH, ".samurai_ide")
 
 NINJA_KNOWLEDGE_PATH = os.path.join(HOME_NINJA_PATH, 'knowledge')
 
@@ -80,7 +80,7 @@ NINJA_THEMES = os.path.join(PRJ_PATH, "extensions", "theme")
 
 NINJA_QSS = os.path.join(PRJ_PATH, "extensions", "theme", "qss")
 
-LOG_FILE_PATH = os.path.join(HOME_NINJA_PATH, 'ninja_ide.log')
+LOG_FILE_PATH = os.path.join(HOME_NINJA_PATH, 'samurai_ide.log')
 
 GET_SYSTEM_PATH = os.path.join(PRJ_PATH, 'tools', 'get_system_path.py')
 
@@ -256,7 +256,7 @@ def clean_custom_shortcuts():
 
 def create_home_dir_structure():
     """
-    Create the necesary directories structure for NINJA-IDE
+    Create the necesary directories structure for Samurai-IDE
     """
     for directory in (HOME_NINJA_PATH, EXTENSIONS_PATH, PLUGINS, EDITOR_SKINS,
                       LANGS, NINJA_THEMES_DOWNLOAD, NINJA_KNOWLEDGE_PATH,

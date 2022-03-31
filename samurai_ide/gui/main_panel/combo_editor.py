@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of NINJA-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (http://ninja-ide.org).
 #
-# NINJA-IDE is free software; you can redistribute it and/or modify
+# Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # any later version.
 #
-# NINJA-IDE is distributed in the hope that it will be useful,
+# Samurai-IDE is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with NINJA-IDE; If not, see <http://www.gnu.org/licenses/>.
+# along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 
 import bisect
 
@@ -44,12 +44,12 @@ from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtCore import QModelIndex
 from PyQt5.QtCore import QAbstractItemModel
 
-from ninja_ide import translations
-from ninja_ide.extensions import handlers
-from ninja_ide.core import settings
-from ninja_ide.gui.ide import IDE
-from ninja_ide.tools import ui_tools
-from ninja_ide.core.file_handling import file_manager
+from samurai_ide import translations
+from samurai_ide.extensions import handlers
+from samurai_ide.core import settings
+from samurai_ide.gui.ide import IDE
+from samurai_ide.tools import ui_tools
+from samurai_ide.core.file_handling import file_manager
 
 
 class ComboEditor(QWidget):
@@ -210,7 +210,7 @@ class ComboEditor(QWidget):
         for neditable in self.bar.get_editables():
             new_combo.add_editor(neditable)
         self.__undocked.append(new_combo)
-        new_combo.setWindowTitle("NINJA-IDE")
+        new_combo.setWindowTitle("Samurai-IDE")
         editor = self.current_editor()
         new_combo.set_current(editor.neditable)
         new_combo.resize(700, 500)

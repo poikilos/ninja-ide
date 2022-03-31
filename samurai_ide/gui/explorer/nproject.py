@@ -8,11 +8,11 @@ from PyQt5.QtCore import (
 
 import os
 
-from ninja_ide import translations
+from samurai_ide import translations
 
-from ninja_ide.core import settings
-from ninja_ide.core.file_handling import file_manager
-from ninja_ide.tools import json_manager
+from samurai_ide.core import settings
+from samurai_ide.core.file_handling import file_manager
+from samurai_ide.tools import json_manager
 
 
 class NProject(QObject):

@@ -10,7 +10,7 @@ from PyQt5.QtCore import QTimer
 from PyQt5.QtCore import QDir
 from PyQt5.QtCore import QFileInfo
 
-from ninja_ide.core.settings import IS_WINDOWS
+from samurai_ide.core.settings import IS_WINDOWS
 
 
 IS_PY_34 = False

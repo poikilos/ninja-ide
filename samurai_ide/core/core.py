@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of NINJA-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (http://ninja-ide.org).
 #
-# NINJA-IDE is free software; you can redistribute it and/or modify
+# Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # any later version.
 #
-# NINJA-IDE is distributed in the hope that it will be useful,
+# Samurai-IDE is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with NINJA-IDE; If not, see <http://www.gnu.org/licenses/>.
+# along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 
 import sys
 import os
@@ -23,7 +23,7 @@ from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import Qt
 from PyQt5.QtCore import QCoreApplication
 
-from ninja_ide.core import cliparser
+from samurai_ide.core import cliparser
 
 PR_SET_NAME = 15
 PROCNAME = b"ninja-ide"
@@ -47,28 +47,28 @@ def run_ninja():
 
     # Create the QApplication object before using the
     # Qt modules to avoid warnings
-    from ninja_ide.core import settings
+    from samurai_ide.core import settings
     QCoreApplication.setAttribute(Qt.AA_EnableHighDpiScaling, settings.HDPI)
 
     app = QApplication(sys.argv)
-    from ninja_ide import resources
+    from samurai_ide import resources
     resources.create_home_dir_structure()
 
     # Load Logger
-    from ninja_ide.tools.logger import NinjaLogger
+    from samurai_ide.tools.logger import NinjaLogger
     NinjaLogger.argparse(log_level, log_file)
 
     # Load Settings
     settings.load_settings()
     if settings.CUSTOM_SCREEN_RESOLUTION:
         os.environ["QT_SCALE_FACTOR"] = settings.CUSTOM_SCREEN_RESOLUTION
-    from ninja_ide import ninja_style
-    app.setStyle(ninja_style.NinjaStyle(resources.load_theme()))
+    from samurai_ide import style
+    app.setStyle(style.IDEStyle(resources.load_theme()))
 
     # Load icon font
-    from ninja_ide.gui.icon_manager import icon  # noqa
+    from samurai_ide.gui.icon_manager import icon  # noqa
 
-    from ninja_ide import gui
+    from samurai_ide import gui
     # Start the UI
     gui.start_ide(app, filenames, projects_path, extra_plugins, linenos)
 

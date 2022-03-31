@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of NINJA-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (http://ninja-ide.org).
 #
-# NINJA-IDE is free software; you can redistribute it and/or modify
+# Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # any later version.
 #
-# NINJA-IDE is distributed in the hope that it will be useful,
+# Samurai-IDE is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with NINJA-IDE; If not, see <http://www.gnu.org/licenses/>.
+# along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 
 import sys
 
@@ -25,20 +25,20 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtCore import Qt
 
-from ninja_ide import resources
-from ninja_ide.core import ipc
-from ninja_ide.tools import json_manager
-from ninja_ide.gui import ide
+from samurai_ide import resources
+from samurai_ide.core import ipc
+from samurai_ide.tools import json_manager
+from samurai_ide.gui import ide
 
 # Templates
-from ninja_ide.core.template_registry import ntemplate_registry  # noqa
-from ninja_ide.core.template_registry import bundled_project_types  # noqa
+from samurai_ide.core.template_registry import ntemplate_registry  # noqa
+from samurai_ide.core.template_registry import bundled_project_types  # noqa
 ###########################################################################
 # Start Virtual Env that supports encapsulation of plugins
 ###########################################################################
 
 # Syntax
-from ninja_ide.gui.syntax_registry import syntax_registry  # noqa
+from samurai_ide.gui.syntax_registry import syntax_registry  # noqa
 
 
 def start_ide(app, filenames, projects_path, extra_plugins, linenos):
@@ -49,9 +49,9 @@ def start_ide(app, filenames, projects_path, extra_plugins, linenos):
             message, Qt.AlignTop | Qt.AlignRight | Qt.AlignAbsolute, Qt.black)
         QCoreApplication.processEvents()
 
-    QCoreApplication.setOrganizationName('NINJA-IDE')
-    QCoreApplication.setOrganizationDomain('NINJA-IDE')
-    QCoreApplication.setApplicationName('NINJA-IDE')
+    QCoreApplication.setOrganizationName('Samurai-IDE')
+    QCoreApplication.setOrganizationDomain('Samurai-IDE')
+    QCoreApplication.setApplicationName('Samurai-IDE')
     app.setWindowIcon(QIcon(":img/icon"))
     # Check if there is another session of ninja-ide opened
     # and in that case send the filenames and projects to that session
@@ -96,38 +96,38 @@ def start_ide(app, filenames, projects_path, extra_plugins, linenos):
     _add_splash("Loading IDE Services...")
     # Register tools dock service after load some settings
     # FIXME: Find a better way to do this
-    import ninja_ide.gui.tools_dock.tools_dock  # noqa
-    import ninja_ide.gui.tools_dock.console_widget  # noqa
-    import ninja_ide.gui.tools_dock.run_widget  # noqa
-    import ninja_ide.gui.tools_dock.find_in_files  # noqa
+    import samurai_ide.gui.tools_dock.tools_dock  # noqa
+    import samurai_ide.gui.tools_dock.console_widget  # noqa
+    import samurai_ide.gui.tools_dock.run_widget  # noqa
+    import samurai_ide.gui.tools_dock.find_in_files  # noqa
 
-    import ninja_ide.gui.main_panel.main_container  # noqa
-    import ninja_ide.gui.central_widget  # noqa
-    import ninja_ide.gui.status_bar  # noqa
-    import ninja_ide.gui.menus.menubar  # noqa
+    import samurai_ide.gui.main_panel.main_container  # noqa
+    import samurai_ide.gui.central_widget  # noqa
+    import samurai_ide.gui.status_bar  # noqa
+    import samurai_ide.gui.menus.menubar  # noqa
 
     # Explorer Container
-    import ninja_ide.gui.explorer.explorer_container  # noqa
-    from ninja_ide.gui.explorer.tabs import tree_projects_widget  # noqa
-    from ninja_ide.gui.explorer.tabs import tree_symbols_widget  # noqa
-    from ninja_ide.gui.explorer.tabs import bookmark_manager  # noqa
+    import samurai_ide.gui.explorer.explorer_container  # noqa
+    from samurai_ide.gui.explorer.tabs import tree_projects_widget  # noqa
+    from samurai_ide.gui.explorer.tabs import tree_symbols_widget  # noqa
+    from samurai_ide.gui.explorer.tabs import bookmark_manager  # noqa
     # Checkers
-    from ninja_ide.gui.editor.checkers import errors_checker  # noqa
-    from ninja_ide.gui.editor.checkers import pep8_checker  # noqa
-    # from ninja_ide.gui.editor.checkers import not_import_checker  # noqa
+    from samurai_ide.gui.editor.checkers import errors_checker  # noqa
+    from samurai_ide.gui.editor.checkers import pep8_checker  # noqa
+    # from samurai_ide.gui.editor.checkers import not_import_checker  # noqa
     # Preferences
-    # from ninja_ide.gui.dialogs.preferences import preferences_general  # noqa
-    # from ninja_ide.gui.dialogs.preferences import preferences_execution  # noqa
-    # from ninja_ide.gui.dialogs.preferences import preferences_interface  # noqa
-    # from ninja_ide.gui.dialogs.preferences import preferences_editor_general  # noqa
-    # from ninja_ide.gui.dialogs.preferences import preferences_editor_display  # noqa
-    # from ninja_ide.gui.dialogs.preferences import preferences_editor_behavior  # noqa
-    # from ninja_ide.gui.dialogs.preferences import preferences_editor_intellisense  # noqa
-    from ninja_ide.intellisensei import intellisense_registry  # noqa
-    from ninja_ide.intellisensei import python_intellisense  # noqa
-    from ninja_ide.gui.editor.checkers import errors_lists  # noqa
-    from ninja_ide.gui.editor.checkers import errors_checker  # noqa
-    from ninja_ide.gui.editor.checkers import pep8_checker  # noqa
+    # from samurai_ide.gui.dialogs.preferences import preferences_general  # noqa
+    # from samurai_ide.gui.dialogs.preferences import preferences_execution  # noqa
+    # from samurai_ide.gui.dialogs.preferences import preferences_interface  # noqa
+    # from samurai_ide.gui.dialogs.preferences import preferences_editor_general  # noqa
+    # from samurai_ide.gui.dialogs.preferences import preferences_editor_display  # noqa
+    # from samurai_ide.gui.dialogs.preferences import preferences_editor_behavior  # noqa
+    # from samurai_ide.gui.dialogs.preferences import preferences_editor_intellisense  # noqa
+    from samurai_ide.intellisensei import intellisense_registry  # noqa
+    from samurai_ide.intellisensei import python_intellisense  # noqa
+    from samurai_ide.gui.editor.checkers import errors_lists  # noqa
+    from samurai_ide.gui.editor.checkers import errors_checker  # noqa
+    from samurai_ide.gui.editor.checkers import pep8_checker  # noqa
 
     # Loading Shortcuts
     # Loading GUI

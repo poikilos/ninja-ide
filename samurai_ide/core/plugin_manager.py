@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of NINJA-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (http://ninja-ide.org).
 #
-# NINJA-IDE is free software; you can redistribute it and/or modify
+# Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3 of the License, or
 # any later version.
 #
-# NINJA-IDE is distributed in the hope that it will be useful,
+# Samurai-IDE is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with NINJA-IDE; If not, see <http://www.gnu.org/licenses/>.
+# along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 
 from __future__ import absolute_import
 from __future__ import unicode_literals
@@ -31,11 +31,11 @@ except ImportError:
     from urllib2 import urlopen
     from urllib2 import URLError
 
-from ninja_ide import resources
-from ninja_ide.tools.logger import NinjaLogger
-from ninja_ide.tools import json_manager
+from samurai_ide import resources
+from samurai_ide.tools.logger import NinjaLogger
+from samurai_ide.tools import json_manager
 
-logger = NinjaLogger('ninja_ide.core.plugin_manager')
+logger = NinjaLogger('samurai_ide.core.plugin_manager')
 REQUIREMENTS = 'requirements.txt'
 COMMAND_FOR_PIP_INSTALL = 'pip install -r %s'
 try:
@@ -49,7 +49,7 @@ except NameError:
 class ServiceLocator(object):
 
     '''
-    Hold the services and allows the interaction between NINJA-IDE and plugins
+    Hold the services and allows the interaction between Samurai-IDE and plugins
     '''
 
     def __init__(self, services=None):
@@ -63,7 +63,7 @@ class ServiceLocator(object):
 
 
 '''
-NINJA-IDE Plugin
+Samurai-IDE Plugin
 my_plugin.plugin
 
 {
@@ -77,7 +77,7 @@ my_plugin.plugin
 class MyPluginExample(Plugin):
 
     def initialize(self):
-        #Configure the plugin using the NINJA-IDE API!!!
+        #Configure the plugin using the Samurai-IDE API!!!
         self.editor_s = self.service_locator.get_service('editor')
         self.toolbar_s = self.service_locator.get_service('toolbar')
         self.toolbar_s.add_action(QAction(...........))
@@ -91,7 +91,7 @@ class MyPluginExample(Plugin):
 
 '''
 ###############################################################################
-# NINJA-IDE Plugin Manager
+# Samurai-IDE Plugin Manager
 ###############################################################################
 
 
@@ -110,7 +110,7 @@ def PluginManager(*args, **kw):
     return __pluginManagerInstance
 
 
-# Extension of the NINJA-IDE plugin
+# Extension of the Samurai-IDE plugin
 PLUGIN_EXTENSION = '.plugin'
 
 
@@ -384,7 +384,7 @@ class __PluginManager(object):
 
 def _availables_plugins(url):
     """
-    Return the availables plugins from an url in NINJA-IDE web page
+    Return the availables plugins from an url in Samurai-IDE web page
     """
     try:
         descriptor = urlopen(url)
@@ -396,14 +396,14 @@ def _availables_plugins(url):
 
 def available_oficial_plugins():
     '''
-    Returns a dict with OFICIAL availables plugins in NINJA-IDE web page
+    Returns a dict with OFICIAL availables plugins in Samurai-IDE web page
     '''
     return _availables_plugins(resources.PLUGINS_WEB)
 
 
 def available_community_plugins():
     '''
-    Returns a dict with COMMUNITY availables plugins in NINJA-IDE web page
+    Returns a dict with COMMUNITY availables plugins in Samurai-IDE web page
     '''
     return _availables_plugins(resources.PLUGINS_COMMUNITY)
 
@@ -501,7 +501,7 @@ def update_local_plugin_descriptor(plugins):
     '''
     updates the local plugin description
     The description.json file holds the information about the plugins
-    downloaded with NINJA-IDE
+    downloaded with Samurai-IDE
     This is a way to track the versions of the plugins
     '''
     structure = []

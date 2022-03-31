@@ -3,10 +3,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; HM NIS Edit Wizard helper defines
-!define PRODUCT_NAME Ninja
+!define PRODUCT_NAME Samurai-IDE
 !define PRODUCT_VERSION 2.1
-!define PRODUCT_PUBLISHER 
-!define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\Ninja.exe"
+!define PRODUCT_PUBLISHER
+!define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\Samurai-IDE.exe"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
 
@@ -15,7 +15,7 @@
 
 ; MUI Settings
 !define MUI_ABORTWARNING
-!define MUI_ICON ninja.ico
+!define MUI_ICON samurai-ide.ico
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
 
 ; Welcome page
@@ -42,46 +42,46 @@
 
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
 OutFile "installer.exe"
-InstallDir "$PROGRAMFILES\Ninja"
+InstallDir "$PROGRAMFILES\Samurai-IDE"
 InstallDirRegKey HKLM "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails hide
 ShowUnInstDetails hide
 
 Section "Principal" SEC01
-    
+
   SetOutPath "$INSTDIR"
 
-  File C:\\NINJA\\ninja-ide-2.1\\dist\\Ninja.exe
-  File C:\\NINJA\\ninja-ide-2.1\\dist\\w9xpopen.exe
-  
+  File C:\\Samurai-IDE\\samurai-ide-2.1\\dist\\Samurai-IDE.exe
+  File C:\\Samurai-IDE\\samurai-ide-2.1\\dist\\w9xpopen.exe
+
   SetOutPath $INSTDIR\\doc
-  
-  File /r C:\\NINJA\\ninja-ide-2.1\\dist\\doc\\* 
-  
+
+  File /r C:\\Samurai-IDE\\samurai-ide-2.1\\dist\\doc\\*
+
   SetOutPath $INSTDIR\\img
-  
-  File /r C:\\NINJA\\ninja-ide-2.1\\dist\\img\\* 
-  
+
+  File /r C:\\Samurai-IDE\\samurai-ide-2.1\\dist\\img\\*
+
   SetOutPath $INSTDIR\\addins
-  
-  File /r C:\\NINJA\\ninja-ide-2.1\\dist\\addins\\* 
-  
+
+  File /r C:\\Samurai-IDE\\samurai-ide-2.1\\dist\\addins\\*
+
   SetOutPath "$INSTDIR"
-  
+
 SectionEnd
 
 Section -AdditionalIcons
-  CreateShortCut "$SMPROGRAMS\Ninja.lnk" "$INSTDIR\Ninja.exe"
-  CreateShortCut "$DESKTOP\Ninja.lnk" "$INSTDIR\Ninja.exe"
-  CreateShortCut "$SMPROGRAMS\Ninja\Desinstalar.lnk" "$INSTDIR\uninst.exe"
+  CreateShortCut "$SMPROGRAMS\Samurai.lnk" "$INSTDIR\Samurai-IDE.exe"
+  CreateShortCut "$DESKTOP\Samurai.lnk" "$INSTDIR\Samurai-IDE.exe"
+  CreateShortCut "$SMPROGRAMS\Samurai-IDE\Desinstalar.lnk" "$INSTDIR\uninst.exe"
 SectionEnd
 
 Section -Post
   WriteUninstaller "$INSTDIR\uninst.exe"
-  WriteRegStr HKLM "${PRODUCT_DIR_REGKEY}" "" "$INSTDIR\Ninja.exe"
+  WriteRegStr HKLM "${PRODUCT_DIR_REGKEY}" "" "$INSTDIR\Samurai-IDE.exe"
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "DisplayName" "$(^Name)"
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "UninstallString" "$INSTDIR\uninst.exe"
-  WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "DisplayIcon" "$INSTDIR\Ninja.exe"
+  WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "DisplayIcon" "$INSTDIR\Samurai-IDE.exe"
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "DisplayVersion" "${PRODUCT_VERSION}"
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "URLInfoAbout" "${PRODUCT_WEB_SITE}"
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "Publisher" "${PRODUCT_PUBLISHER}"
@@ -101,13 +101,13 @@ FunctionEnd
 Section Uninstall
   Delete "$INSTDIR\*"
 
-  Delete "$SMPROGRAMS\Ninja\Desinstalar.lnk"
-  Delete "$DESKTOP\Ninja.lnk"
-  Delete "$SMPROGRAMS\Ninja.lnk"
-  
+  Delete "$SMPROGRAMS\Samurai-IDE\Desinstalar.lnk"
+  Delete "$DESKTOP\Samurai.lnk"
+  Delete "$SMPROGRAMS\Samurai.lnk"
+
   Delete "$INSTDIR\*"
-    
-  RMDir "$SMPROGRAMS\Ninja"
+
+  RMDir "$SMPROGRAMS\Samurai-IDE"
   RMDir "$INSTDIR"
 
   DeleteRegKey ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}"

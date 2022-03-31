@@ -72,7 +72,7 @@ Rectangle {
                 anchors.left: parent.left
                 anchors.right: parent.right
                 horizontalAlignment: Text.AlignHCenter
-                text: qsTr("NINJA-IDE (from: \"Ninja-IDE Is Not Just Another IDE\"), is a cross-platform integrated development environment specifically designed to build Python Applications. NINJA-IDE provides the tools necessary to simplify the Python software development process and handles all kinds of situations thanks to its rich extensibility.")
+                text: qsTr("Samurai-IDE (from: \"Samurai-IDE is the Same But More Active Involvement IDE\"), is a cross-platform integrated development environment specifically designed to build Python Applications. Samurai-IDE provides the tools necessary to simplify the Python software development process and handles all kinds of situations thanks to its rich extensibility.")
                 wrapMode: Text.WordWrap
                 color: "#eeeeec"
             }
@@ -178,7 +178,7 @@ Rectangle {
         anchors.bottomMargin: 10
         font.pixelSize: 12
         color: "#eeeeec"
-        text: "Copyright © 2010-" + new Date().getFullYear() + " NINJA-IDE is distributed under the terms of the GNU GPLv3+ copyleft license"
+        text: "Copyright © 2010-" + new Date().getFullYear() + " Samurai-IDE is distributed under the terms of the GNU GPLv3+ copyleft license"
     }
 
     function add_project(name, path, favorite){

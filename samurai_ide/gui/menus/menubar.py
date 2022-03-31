@@ -7,10 +7,10 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtCore import QObject
 from collections import defaultdict
 
-from ninja_ide import translations
-from ninja_ide.core import settings
-from ninja_ide.gui.ide import IDE
-from ninja_ide.tools import utils
+from samurai_ide import translations
+from samurai_ide.core import settings
+from samurai_ide.gui.ide import IDE
+from samurai_ide.tools import utils
 
 
 SEC01 = 100
