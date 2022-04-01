@@ -1,0 +1,24 @@
+#!/bin/sh
+logsDir=~/.var/log/samurai-ide
+exeName="samurai-ide.py"
+REPO_NAME=samurai-ide
+REPO_USER=poikilos
+mkdir -p $logsDir
+tryExec=~/git/$REPO_NAME/$exeName
+Exec=~/Downloads/git/$REPO_USER/$REPO_NAME/$exeName
+# if [ -f "$exeName" ]; then
+#     Exec="`pwd`/$exeName"
+if [ -f "$tryExec" ]; then
+    Exec="$tryExec"
+fi
+if [ ! -f "$Exec" ]; then
+    echo "Error: \"$Exec\" doesn't exist."
+    echo "* repairing..."
+    /home/owner/git/textManglePlugin/doc/development/1st_time_repo_setup.sh
+fi
+python3 $Exec "$@" 1>$logsDir/out.log 2>$logsDir/err.log
+code=$?
+cat $logsDir/out.log
+cat $logsDir/err.log
+if [ $code -ne 0 ]; then exit $code; fi
+
