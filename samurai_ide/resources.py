@@ -96,15 +96,15 @@ BUGS_PAGE = "https://github.com/poikilos/samurai-ide/issues"
 
 PLUGINS_DOC = "http://ninja-ide.readthedocs.org/en/latest/"
 
-UPDATES_URL = 'http://ninja-ide.org/updates'
+UPDATES_URL = 'https://samurai-ide.org/updates'
 
-SCHEMES_URL = 'http://ninja-ide.org/schemes/api/'
+SCHEMES_URL = 'https://samurai-ide.org/schemes/api/'
 
-LANGUAGES_URL = 'http://ninja-ide.org/plugins/languages'
+LANGUAGES_URL = 'https://samurai-ide.org/plugins/languages'
 
-PLUGINS_WEB = 'http://ninja-ide.org/plugins/api/official'
+PLUGINS_WEB = 'https://samurai-ide.org/plugins/api/official'
 
-PLUGINS_COMMUNITY = 'http://ninja-ide.org/plugins/api/community'
+PLUGINS_COMMUNITY = 'https://samurai-ide.org/plugins/api/community'
 
 
 ###############################################################################
