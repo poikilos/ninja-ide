@@ -106,7 +106,7 @@ Rectangle {
                         width: colButtons.buttonWidth
                         height: 35
                         text: qsTr("Chat with us!")
-                        onClicked: Qt.openUrlExternally("https://kiwiirc.com/client/chat.freenode.net/?nick=Ninja|?&theme=cli#ninja-ide")
+                        onClicked: Qt.openUrlExternally("https://kiwiirc.com/client/chat.freenode.net/?nick=Samurai|?&theme=cli#ninja-ide")
                     }
                     Button {
                         width: colButtons.buttonWidth

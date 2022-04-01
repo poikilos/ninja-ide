@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of Samurai-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (https://samurai-ide.org).
 #
 # Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -230,7 +230,7 @@ RELOAD_FILE = 0
 # FILE MANAGER
 ###############################################################################
 
-# File types supported by Ninja-IDE
+# File types supported by the IDE
 FILE_TYPES = [
     ("Python files", (".py", ".pyw")),
     ("QML files", (".qml",)),

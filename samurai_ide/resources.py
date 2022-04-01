@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of Samurai-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (https://samurai-ide.org).
 #
 # Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -49,11 +49,11 @@ if frozen in ('dll', 'console_exe', 'windows_exe'):
     # py2exe:
     PRJ_PATH = os.path.abspath(os.path.dirname(sys.executable))
 
-HOME_NINJA_PATH = os.path.join(HOME_PATH, ".samurai_ide")
+HOME_NINJA_PATH = os.path.join(HOME_PATH, ".config", "samurai_ide")
 
 NINJA_KNOWLEDGE_PATH = os.path.join(HOME_NINJA_PATH, 'knowledge')
 
-SETTINGS_PATH = os.path.join(HOME_NINJA_PATH, 'ninja_settings.ini')
+SETTINGS_PATH = os.path.join(HOME_NINJA_PATH, 'ide_settings.ini')
 
 DATA_SETTINGS_PATH = os.path.join(HOME_NINJA_PATH, 'data_settings.ini')
 
@@ -92,7 +92,7 @@ FONTS = os.path.join(PRJ_PATH, "fonts")
 # URLS
 ###############################################################################
 
-BUGS_PAGE = "https://github.com/ninja-ide/ninja-ide/issues"
+BUGS_PAGE = "https://github.com/poikilos/samurai-ide/issues"
 
 PLUGINS_DOC = "http://ninja-ide.readthedocs.org/en/latest/"
 

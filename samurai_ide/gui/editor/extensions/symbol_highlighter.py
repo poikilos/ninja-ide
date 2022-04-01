@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of Samurai-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (https://samurai-ide.org).
 #
 # Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ from samurai_ide.gui.editor.extra_selection import ExtraSelection
 
 
 class SymbolHighlighter(base.Extension):
-    """Symbol Matcher extension for Ninja-IDE Editor"""
+    """Symbol Matcher extension for Samurai-IDE Editor"""
 
     OPEN_SYMBOLS = "([{"
     CLOSED_SYMBOLS = ")]}"

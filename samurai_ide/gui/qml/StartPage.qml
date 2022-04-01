@@ -149,7 +149,7 @@ Rectangle {
             Text {
                 id: link
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "ninja-ide.org"
+                text: "github.com/poikilos/samurai-ide"
                 color: theme.StartPageLink
                 font.family: "monospace"
                 font.pointSize: 8
@@ -165,7 +165,7 @@ Rectangle {
                             link.font.underline = true;
                         }
                     }
-                    onClicked: Qt.openUrlExternally("http://ninja-ide.org");
+                    onClicked: Qt.openUrlExternally("https://github.com/poikilos/samurai-ide");
                 }
             }
         }

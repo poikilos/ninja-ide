@@ -27,7 +27,12 @@ python3 samurai-ide.py
 
 ### Migrating from Ninja-IDE
 ```
-if [
+if [ ! -d ~/.config/samurai_ide ]; then
+    cp -R ~/.ninja_ide ~/.config/samurai_ide
+    mv ~/.config/samurai_ide/ninja_settings.ini ~/.config/samurai_ide/samurai_settings.ini
+else
+    echo "Error: ~/.config/samurai_ide already exists. After ensuring you preserve crucial data from there, delete or rename it."
+fi
 ```
 
 ## Samurai-IDE contacts

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of Samurai-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (https://samurai-ide.org).
 #
 # Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,9 +24,9 @@ from __future__ import absolute_import
 
 __prj__ = "Samurai-IDE"
 __author__ = "The Samurai-IDE Team"
-__mail__ = "ninja-ide at googlegroups dot com"
-__url__ = "http://www.ninja-ide.org"
-__source__ = "https://github.com/ninja-ide/ninja-ide"
+__mail__ = "7557867+poikilos@users.noreply.github.com"
+__url__ = "https://github.com/poikilos/samurai-ide"
+__source__ = "https://github.com/poikilos/samurai-ide"
 __version__ = "3.0-alpha"
 __license__ = "GPL3"
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of Samurai-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (https://samurai-ide.org).
 #
 # Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -50,25 +50,25 @@ def test_close_quotes(qtbot, editor_bot, text, expected_text, column):
 
 
 def test_autocomplete_single_selection(editor_bot, qtbot):
-    editor_bot.text = 'ninja-ide rocks!'
+    editor_bot.text = 'samurai-ide rocks!'
     editor_bot.selectAll()
     qtbot.keyPress(editor_bot, Qt.Key_QuoteDbl)
-    assert editor_bot.text == '"ninja-ide rocks!"'
+    assert editor_bot.text == '"samurai-ide rocks!"'
 
 
 def test_autocomplete_multiline_selection(editor_bot, qtbot):
-    editor_bot.text = 'ninja-ide rocks!\nholaaaa\nkokoko'
+    editor_bot.text = 'samurai-ide rocks!\nholaaaa\nkokoko'
     editor_bot.selectAll()
     qtbot.keyPress(editor_bot, Qt.Key_Apostrophe)
-    assert editor_bot.text == "'ninja-ide rocks!\nholaaaa\nkokoko'"
+    assert editor_bot.text == "'samurai-ide rocks!\nholaaaa\nkokoko'"
 
 
 def test_autocomplete_multiline_selection2(editor_bot, qtbot):
-    editor_bot.text = 'ninja-ide rocks!\nholaaaa\nkokoko'
+    editor_bot.text = 'samurai-ide rocks!\nholaaaa\nkokoko'
     editor_bot.selectAll()
     for i in range(5):
         qtbot.keyPress(editor_bot, Qt.Key_Apostrophe)
-    assert editor_bot.text == "'''''ninja-ide rocks!\nholaaaa\nkokoko'''''"
+    assert editor_bot.text == "'''''samurai-ide rocks!\nholaaaa\nkokoko'''''"
 
 
 def test_autocomplete_triple_double_quotes(editor_bot, qtbot):

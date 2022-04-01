@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of Samurai-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (https://samurai-ide.org).
 #
 # Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -244,7 +244,7 @@ class _MainContainer(QWidget):
 
     def show_selector(self):
         if self.selector != self.stack.currentWidget():
-            temp_dir = os.path.join(QDir.tempPath(), "ninja-ide")
+            temp_dir = os.path.join(QDir.tempPath(), "samurai-ide")
             if not os.path.exists(temp_dir):
                 os.mkdir(temp_dir)
             collected_data = []
@@ -261,7 +261,7 @@ class _MainContainer(QWidget):
             self._selector_ready()
         """
         if self.selector != self.stack.currentWidget():
-            temp_dir = os.path.join(QDir.tempPath(), "ninja-ide")
+            temp_dir = os.path.join(QDir.tempPath(), "samurai-ide")
             if not os.path.exists(temp_dir):
                 os.mkdir(temp_dir)
             collected_data = []

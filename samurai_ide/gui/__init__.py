@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of Samurai-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (https://samurai-ide.org).
 #
 # Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -53,7 +53,7 @@ def start_ide(app, filenames, projects_path, extra_plugins, linenos):
     QCoreApplication.setOrganizationDomain('Samurai-IDE')
     QCoreApplication.setApplicationName('Samurai-IDE')
     app.setWindowIcon(QIcon(":img/icon"))
-    # Check if there is another session of ninja-ide opened
+    # Check if there is another session of the ide opened
     # and in that case send the filenames and projects to that session
     running = ipc.is_running()
     start_server = not running[0]

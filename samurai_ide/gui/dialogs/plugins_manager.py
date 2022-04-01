@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# This file is part of Samurai-IDE (http://ninja-ide.org).
+# This file is part of Samurai-IDE (https://samurai-ide.org).
 #
 # Samurai-IDE is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -148,7 +148,7 @@ class PluginsManagerWidget(QDialog):
         """Takes an url argument and open the link on web browser"""
         link = url.toString()
         if link.startswith('/plugins/'):
-            link = 'http://ninja-ide.org' + link
+            link = 'http://samurai-ide.org' + link
         webbrowser.open(link)
 
     def _reload_plugins(self):
