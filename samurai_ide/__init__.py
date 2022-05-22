@@ -25,7 +25,7 @@ from __future__ import absolute_import
 __prj__ = "Samurai-IDE"
 __author__ = "The Samurai-IDE Team"
 __mail__ = "7557867+poikilos@users.noreply.github.com"
-__url__ = "https://github.com/poikilos/samurai-ide"
+__url__ = "https://samurai-ide.org"
 __source__ = "https://github.com/poikilos/samurai-ide"
 __version__ = "3.0-alpha"
 __license__ = "GPL3"

@@ -15,13 +15,22 @@ On any system you want **Samurai-IDE**, you'll need to have this dependencies in
 - [Python](https://python.org "Python Homepage") 3.7+
 - [PyQt5](https://riverbankcomputing.com/software/pyqt/intro) 5.15+
 
+
 ## Cloning and Running
-You can clone this repo and simply execute:
+The `PyQt5-sip` package should be upgraded as shown below (as per
+<https://github.com/gnuradio/gnuradio/issues/5435#issuecomment-1005152735>)
+to avoid an error like "RuntimeError: the sip module implements API
+v12.0 to v12.8 but the PyQt5.QtWidgets module requires API v12.9".
+
+You can clone this repo and (After changing `apt` in the command below
+to the correct package manager for your distro) simply execute:
 
 ```bash
+# sudo apt install python3-pyqt5.qtquick
 git clone git://github.com/poikilos/samurai-ide.git
 cd samurai-ide
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
+python3 -m pip install pyqtwebengine PyQt5-sip  --upgrade
 python3 samurai-ide.py
 ```
 
