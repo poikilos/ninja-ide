@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 logsDir=~/.var/log/samurai-ide
 exeName="samurai-ide.py"
 REPO_NAME=samurai-ide
@@ -13,8 +13,12 @@ if [ -f "$tryExec" ]; then
 fi
 if [ ! -f "$Exec" ]; then
     echo "Error: \"$Exec\" doesn't exist."
-    echo "* repairing..."
-    /home/owner/git/textManglePlugin/doc/development/1st_time_repo_setup.sh
+    if [ -f "$tryRepair" ]; then
+        echo "* repairing..."
+        tryRepair="$HOME/git/textManglePlugin/doc/development/1st_time_repo_setup.sh"
+    else
+        echo "* preparing the repo is impossible since there is no such file \"$tryRepair\""
+    fi
 fi
 python3 $Exec "$@" 1>$logsDir/out.log 2>$logsDir/err.log
 code=$?
