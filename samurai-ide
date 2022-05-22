@@ -22,7 +22,12 @@ if [ ! -f "$Exec" ]; then
 fi
 python3 $Exec "$@" 1>$logsDir/out.log 2>$logsDir/err.log
 code=$?
-cat $logsDir/out.log
-cat $logsDir/err.log
-if [ $code -ne 0 ]; then exit $code; fi
+geany $logsDir/err.log &
+sleep 3
+geany $logsDir/out.log &
+if [ $code -ne 0 ]; then
+    echo "See $logsDir for a copy of the output above."
+    exit $code
+    sleep 3
+fi
 

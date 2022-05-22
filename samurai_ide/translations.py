@@ -713,7 +713,7 @@ TR_COPY_FILE_TO = tr("Samurai-IDE", "Copy File To")
 TR_SHOW_FILESIZE = tr("Samurai-IDE", "Show/Hide Filesize Info")
 TR_PROJECT_NONEXIST_TITLE = tr("Samurai-IDE", "Folder does not exist")
 TR_PROJECT_NONEXIST = tr("Samurai-IDE", ("The path <b>%s</b> does not seem to "
-                                       "exist anymore on disk."))
+                                         "exist anymore on disk."))
 TR_PROJECT_PATH_ALREADY_EXIST_TITLE = tr("Samurai-IDE",
                                          "Project path already exist")
 TR_PROJECT_PATH_ALREADY_EXIST = tr("Samurai-IDE",
