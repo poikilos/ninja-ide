@@ -497,8 +497,7 @@ class ActionBar(QFrame):
         self.lbl_position = QLabel()
         self.lbl_position.setObjectName("position")
         self.lbl_position.setText(self._pos_text % (0, 0))
-        margin = self.style().pixelMetric(
-            QStyle.PM_LayoutHorizontalSpacing) / 2
+        margin = self.style().pixelMetric(QStyle.PM_LayoutHorizontalSpacing) // 2
         self.lbl_position.setContentsMargins(margin, 0, margin, 0)
         self.lbl_position.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         hbox.addWidget(self.lbl_position)

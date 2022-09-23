@@ -15,7 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 
-import collections
+import collections.abc
 
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWidgets import QToolButton
@@ -228,7 +228,7 @@ class _ToolsDock(QWidget):
     def add_widget(self, display_name, obj):
         self._stack_widgets.addWidget(obj)
         func = getattr(obj, "install_widget", None)
-        if isinstance(func, collections.Callable):
+        if isinstance(func, collections.abc.Callable):
             func()
 
     def on_button_triggered(self):
@@ -354,16 +354,12 @@ class ToolButton(QPushButton):
             painter.drawText(event.rect(), Qt.AlignCenter, self._text)
         else:
             fm = self.fontMetrics()
-            base_line = (self.height() - fm.height()) / 2 + fm.ascent()
+            base_line = (self.height() - fm.height()) // 2 + fm.ascent()
             number_width = fm.width(self._number)
 
             painter = QPainter(self)
             # Draw shortcut number
-            painter.drawText(
-                (15 - number_width) / 2,
-                base_line,
-                self._number
-            )
+            painter.drawText((15 - number_width) // 2, base_line, self._number)
             # Draw display name of tool button
             painter.drawText(
                 18,

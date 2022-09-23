@@ -140,8 +140,7 @@ class CentralWidget(QWidget):
         lateral_visible = qsettings.value(
             "window/central/lateral_visible", True, type=bool)
         if height_size is None:
-            self._splitter_inside.setSizes([(self.height() / 3) * 2,
-                                           self.height() / 3])
+            self._splitter_inside.setSizes([(self.height() // 3) * 2, self.height() // 3])
         else:
             self._splitter_inside.restoreState(height_size)
         if width_size is None:

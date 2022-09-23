@@ -18,12 +18,10 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 
 import collections
+import collections.abc
+
 from functools import partial
-from PyQt5.QtWidgets import (
-    # QSplitter,
-    QMenu,
-    QTabWidget
-)
+from PyQt5.QtWidgets import QMenu,QTabWidget
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt
 
@@ -200,7 +198,7 @@ class ExplorerContainer(dynamic_splitter.DynamicSplitter):
         else:
             self.widget(widget_index).addTab(obj, tabname)
         func = getattr(obj, 'install_tab', None)
-        if isinstance(func, collections.Callable):
+        if isinstance(func, collections.abc.Callable):
             func()
 
     def rotate_tab_position(self):
