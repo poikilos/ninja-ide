@@ -85,7 +85,7 @@ class RightMargin(base.Extension):
         metrics = QFontMetricsF(self._neditor.font())
         doc_margin = self._neditor.document().documentMargin()
         offset = self._neditor.contentOffset().x() + doc_margin
-        x = round(metrics.width(' ') * self.__position) + offset
+        x = int(round(metrics.width(' ') * self.__position) + offset)
         if self.__background:
             width = self._neditor.viewport().width() - x
             rect = QRect(x, 0, width, self._neditor.height())

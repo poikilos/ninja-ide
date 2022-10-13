@@ -195,7 +195,7 @@ class CodeFoldingWidget(side_area.SideWidget):
         for top, _, block in self._neditor.visible_blocks:
             if not self.is_foldable_block(block):
                 continue
-            branch_rect = QRect(0, top, self.sizeHint().width(),
+            branch_rect = QRect(0, int(top), self.sizeHint().width(),
                                 self.sizeHint().height())
             opt = QStyleOptionViewItem()
             opt.rect = branch_rect

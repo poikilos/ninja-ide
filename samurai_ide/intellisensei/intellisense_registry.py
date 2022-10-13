@@ -18,7 +18,7 @@
 import time
 import abc
 from collections import namedtuple
-from collections import Callable
+from collections.abc import Callable
 
 from PyQt5.QtCore import QObject
 from PyQt5.QtCore import QThread

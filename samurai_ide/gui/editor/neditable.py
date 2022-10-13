@@ -14,7 +14,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
-import collections
+import collections.abc
 
 from PyQt5.QtCore import QObject
 from PyQt5.QtCore import pyqtSignal
@@ -229,5 +229,5 @@ class NEditable(QObject):
         for items in self.registered_checkers:
             checker, _, _ = items
             func = getattr(checker, 'refresh_display', None)
-            if isinstance(func, collections.Callable):
+            if isinstance(func, collections.abc.Callable):
                 func()

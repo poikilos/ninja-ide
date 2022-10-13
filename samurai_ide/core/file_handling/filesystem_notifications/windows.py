@@ -242,7 +242,7 @@ class NinjaFileSystemWatcher(base_watcher.BaseWatcher):
         if path in self.watching_paths:
             self.watching_paths[path].stop()
             self.watching_paths[path].join()
-            del(self.watching_paths[path])
+            del self.watching_paths[path]
             # Remove real watcher using platform specific things
 
     def shutdown_notification(self):

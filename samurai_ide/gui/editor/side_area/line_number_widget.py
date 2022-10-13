@@ -60,11 +60,10 @@ class LineNumberWidget(side_area.SideWidget):
         current_line, _ = self._neditor.cursor_position
         # Draw visible blocks
         for top, line, block in self._neditor.visible_blocks:
+            top = int(top)
             # Set bold to current line and selected lines
-            if ((has_sel and sel_start <= line <= sel_end) or
-                    (not has_sel and current_line == line)):
-                painter.fillRect(
-                    QRect(0, top, self.width(), height), self._color_selected)
+            if (has_sel and sel_start <= line <= sel_end) or (not has_sel and current_line == line):
+                painter.fillRect(QRect(0, top, self.width(), height), self._color_selected)
             else:
                 painter.setPen(pen)
                 painter.setFont(font)

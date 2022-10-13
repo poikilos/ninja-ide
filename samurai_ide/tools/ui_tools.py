@@ -17,7 +17,7 @@
 
 import os
 import math
-import collections
+import collections.abc
 from urllib.parse import urlparse, urlunparse
 
 from PyQt5.QtWidgets import QApplication
@@ -900,7 +900,7 @@ def install_shortcuts(obj, actions, ide):
                     continue
                 shortcut = QShortcut(short(short_key), ide)
             shortcut.setContext(Qt.ApplicationShortcut)
-            if isinstance(func, collections.Callable):
+            if isinstance(func, collections.abc.Callable):
                 shortcut.activated.connect(func)
         if action_data:
             is_menu = action_data.get('is_menu', False)
@@ -938,7 +938,7 @@ def install_shortcuts(obj, actions, ide):
             elif keysequence and not is_menu:
                 item_ui.setShortcut(short(keysequence))
                 item_ui.setShortcutContext(Qt.ApplicationShortcut)
-            if isinstance(func, collections.Callable) and not is_menu:
+            if isinstance(func, collections.abc.Callable) and not is_menu:
                 item_ui.triggered.connect(lambda _, func=func: func())
             if section and section[0] is not None and weight:
                 ide.register_menuitem(item_ui, section, weight)

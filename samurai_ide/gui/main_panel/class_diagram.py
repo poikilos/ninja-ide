@@ -101,7 +101,7 @@ class ClassDiagram(QWidget, itab_item.ITabItem):
         taskList = {
             Qt.Key_Plus: lambda: self.scaleView(1.2),
             Qt.Key_Minus: lambda: self.scaleView(1 / 1.2)}
-        if(event.key() in taskList):
+        if event.key() in taskList:
             taskList[event.key()]()
         else:
             QWidget.keyPressEvent(self, event)

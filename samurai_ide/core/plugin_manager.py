@@ -15,21 +15,15 @@
 # You should have received a copy of the GNU General Public License
 # along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 
-from __future__ import absolute_import
-from __future__ import unicode_literals
-
 import os
 import sys
 import shutil
 import copy
 import zipfile
 import traceback
-try:
-    from urllib.request import urlopen
-    from urllib.error import URLError
-except ImportError:
-    from urllib2 import urlopen
-    from urllib2 import URLError
+
+from urllib.request import urlopen
+from urllib.error import URLError
 
 from samurai_ide import resources
 from samurai_ide.tools.logger import NinjaLogger
@@ -38,19 +32,12 @@ from samurai_ide.tools import json_manager
 logger = NinjaLogger('samurai_ide.core.plugin_manager')
 REQUIREMENTS = 'requirements.txt'
 COMMAND_FOR_PIP_INSTALL = 'pip install -r %s'
-try:
-    # For Python2
-    str = unicode  # lint:ok
-except NameError:
-    # We are in Python3
-    pass
 
 
 class ServiceLocator(object):
-
-    '''
+    """
     Hold the services and allows the interaction between Samurai-IDE and plugins
-    '''
+    """
 
     def __init__(self, services=None):
         self.__services = services if services else {}
@@ -90,6 +77,8 @@ class MyPluginExample(Plugin):
         print 'se apreto alguna tecla en el ide...'
 
 '''
+
+
 ###############################################################################
 # Samurai-IDE Plugin Manager
 ###############################################################################
@@ -115,15 +104,15 @@ PLUGIN_EXTENSION = '.plugin'
 
 
 class __PluginManager(object):
-    '''
+    """
     Plugin manager allows to load, unload, initialize plugins.
-    '''
+    """
 
     def __init__(self, plugins_dir, service_locator):
-        '''
+        """
         @param plugins_dir: Path to search plugins.
-        @param service_loctor: ServiceLocator object.
-        '''
+        @param service_locator: ServiceLocator object.
+        """
         self._service_locator = service_locator
         # new!
         self._plugins_by_dir = {}
@@ -146,11 +135,11 @@ class __PluginManager(object):
         return [obj]
 
     def add_plugin_dir(self, plugin_dir):
-        '''
+        """
         Add a new directory to search plugins.
 
         @param plugin_dir: absolute path.
-        '''
+        """
         if plugin_dir not in self._plugins_by_dir:
             self._plugins_by_dir[plugin_dir] = []
 
@@ -160,21 +149,21 @@ class __PluginManager(object):
         return self.get_active_plugins()
 
     def get_active_plugins(self):
-        '''
+        """
         Returns a list the instances
-        '''
+        """
         return [plugin[0] for plugin in list(self._active_plugins.values())]
 
     def _get_dir_from_plugin_name(self, plugin_name):
-        '''
+        """
         Returns the dir of the plugin_name
-        '''
+        """
         for dir_, plug_names in list(self._plugins_by_dir.items()):
             if plugin_name in plug_names:
                 return dir_
 
     def __getitem__(self, plugin_name):
-        '''
+        """
         Magic method to get a plugin instance
         from a given name.
         @Note: This method has the logic below.
@@ -187,7 +176,7 @@ class __PluginManager(object):
         @param plugin_name: plugin name.
 
         @return: Plugin instance or None
-        '''
+        """
         global PLUGIN_EXTENSION
         ext = PLUGIN_EXTENSION
         if not plugin_name.endswith(ext):
@@ -201,7 +190,7 @@ class __PluginManager(object):
         raise KeyError(plugin_name)
 
     def __contains__(self, plugin_name):
-        '''
+        """
         Magic method to know whether the
         PluginManager contains
         a plugin with a given name.
@@ -209,48 +198,48 @@ class __PluginManager(object):
         @param plugin_name: plugin name.
 
         @return: True or False.
-        '''
+        """
         return plugin_name in self._found_plugins
 
     def __iter__(self):
-        '''
+        """
         Magic method to iterate over all
         the plugin's names.
 
         @return: iterator.
-        '''
+        """
         return iter(self._found_plugins)
 
     def __len__(self):
-        '''
+        """
         Magic method to know the plugins
         quantity.
         @return: length.
-        '''
+        """
         return len(self._found_plugins)
 
     def __bool__(self):
-        '''
+        """
         Magic method to indicate that any
         instance must pass the if conditional
         if x:
-        '''
+        """
         return True
 
     def get_plugin_name(self, file_name):
-        '''
+        """
         Get the plugin's name from a file name.
         @param file_name: A file object name.
         @return: A plugin name from a file.
-        '''
+        """
         plugin_file_name, file_ext = os.path.splitext(file_name)
         return plugin_file_name
 
     def list_plugins(self, dir_name):
-        '''
+        """
         Crawl a directory and collect plugins.
         @return: List with plugin names.
-        '''
+        """
         global PLUGIN_EXTENSION
         ext = PLUGIN_EXTENSION
         try:
@@ -260,18 +249,18 @@ class __PluginManager(object):
             return ()
 
     def is_plugin_active(self, plugin_name):
-        '''
+        """
         Check if a plugin is or not active
         @param plugin_name: Plugin name to check.
         @return: True or False
-        '''
+        """
         return plugin_name in self._active_plugins
 
     def discover(self):
-        '''
+        """
         Search all files for directory
         and get the valid plugin's names.
-        '''
+        """
         for dir_name in self._plugins_by_dir:
             for file_name in self.list_plugins(dir_name):
                 plugin_name = file_name
@@ -289,12 +278,10 @@ class __PluginManager(object):
             plugin_instance = klass(self._service_locator, metadata=metadata)
             # return the plugin instance
             return plugin_instance
-        except(ImportError, AttributeError) as reason:
-            raise PluginManagerException('Error loading "%s": %s' %
-                                         (module, reason))
+        except (ImportError, AttributeError) as reason:
+            raise PluginManagerException(f'Error loading "{module}": {reason}')
         finally:
             sys.path = old_syspath
-        return None
 
     def load(self, plugin_name, dir_name):
         global PLUGIN_EXTENSION
@@ -395,23 +382,23 @@ def _availables_plugins(url):
 
 
 def available_oficial_plugins():
-    '''
+    """
     Returns a dict with OFICIAL availables plugins in Samurai-IDE web page
-    '''
+    """
     return _availables_plugins(resources.PLUGINS_WEB)
 
 
 def available_community_plugins():
-    '''
+    """
     Returns a dict with COMMUNITY availables plugins in Samurai-IDE web page
-    '''
+    """
     return _availables_plugins(resources.PLUGINS_COMMUNITY)
 
 
 def local_plugins():
-    '''
+    """
     Returns the local plugins
-    '''
+    """
     if not os.path.isfile(resources.PLUGINS_DESCRIPTOR):
         return []
     plugins = json_manager.read_json(resources.PLUGINS_DESCRIPTOR)
@@ -419,18 +406,18 @@ def local_plugins():
 
 
 def __get_all_plugin_descriptors():
-    '''
+    """
     Returns all the .plugin files
-    '''
+    """
     global PLUGIN_EXTENSION
     return [pf for pf in os.listdir(resources.PLUGINS)
             if pf.endswith(PLUGIN_EXTENSION)]
 
 
 def download_plugin(file_):
-    '''
+    """
     Download a plugin specified by file_
-    '''
+    """
     global PLUGIN_EXTENSION
     # get all the .plugin files in local filesystem
     plugins_installed_before = set(__get_all_plugin_descriptors())
@@ -498,18 +485,18 @@ def has_dependencies(plug):
 
 
 def update_local_plugin_descriptor(plugins):
-    '''
+    """
     updates the local plugin description
     The description.json file holds the information about the plugins
     downloaded with Samurai-IDE
     This is a way to track the versions of the plugins
-    '''
+    """
     structure = []
     if os.path.isfile(resources.PLUGINS_DESCRIPTOR):
         structure = json_manager.read_json(resources.PLUGINS_DESCRIPTOR)
     for plug_list in plugins:
         # create the plugin data
-        plug = {}
+        plug = dict()
         plug['name'] = plug_list[0]
         plug['version'] = plug_list[1]
         plug['description'] = plug_list[2]

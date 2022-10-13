@@ -40,10 +40,7 @@ class NProject(QObject):
         self.post_exec_script = project.get('postExecScript', '')
         self.indentation = project.get('indentation', settings.INDENT)
         self.use_tabs = project.get('use-tabs', settings.USE_TABS)
-        self.extensions = project.get(
-            'supported-extensions',
-            settings.get_supported_extensions()
-        )
+        self.extensions = project.get('supported-extensions', settings.get_supported_extensions())
         self.python_exec = project.get('pythonExec', settings.PYTHON_EXEC)
         self.python_path = project.get('PYTHONPATH', '')
         self.additional_builtins = project.get('additional_builtins', [])
@@ -71,7 +68,7 @@ class NProject(QObject):
 
     def save_project_properties(self):
         # save project properties
-        project = {}
+        project = dict()
         project['name'] = self._name
         project['description'] = self.description
         project['url'] = self.url
@@ -126,4 +123,4 @@ class NProject(QObject):
 
     @model.deleter
     def model(self):
-        del(self.__model)
+        del self.__model
