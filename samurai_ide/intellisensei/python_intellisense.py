@@ -34,7 +34,7 @@ class PythonProvider(intellisense_registry.Provider):
         for module in ("PyQt4", "PyQt5", "numpy"):
             try:
                 jedi.preload_module(module)
-            except:
+            except AttributeError:
                 print("Jedi couldn't load: ", module)
 
     def __get_script(self):

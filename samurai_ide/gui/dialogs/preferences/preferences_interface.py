@@ -15,10 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
 
-
-from __future__ import absolute_import
-from __future__ import unicode_literals
-
 import os
 
 from PyQt5.QtWidgets import QWidget
@@ -235,7 +231,7 @@ class Interface(QWidget):
         self._languages = ['English'] + \
             [file_manager.get_module_name(lang) for lang in langs]
         self._comboLang.addItems(self._languages)
-        if(self._comboLang.count() > 1):
+        if self._comboLang.count() > 1:
             self._comboLang.setEnabled(True)
         if settings.LANGUAGE:
             index = self._comboLang.findText(settings.LANGUAGE)

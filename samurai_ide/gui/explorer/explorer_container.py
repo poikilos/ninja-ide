@@ -14,14 +14,12 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Samurai-IDE; If not, see <http://www.gnu.org/licenses/>.
-from __future__ import absolute_import
-from __future__ import unicode_literals
 
 import collections
 import collections.abc
 
 from functools import partial
-from PyQt5.QtWidgets import QMenu,QTabWidget
+from PyQt5.QtWidgets import QMenu, QTabWidget
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt
 
@@ -29,6 +27,7 @@ from samurai_ide import translations
 from samurai_ide.gui.ide import IDE
 from samurai_ide.gui import dynamic_splitter
 from samurai_ide.tools.logger import NinjaLogger
+
 
 logger = NinjaLogger('samurai_ide.gui.explorer.explorer_container')
 
