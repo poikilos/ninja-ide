@@ -2,7 +2,7 @@
 # Contributor: Severin Glöckner <severin dot gloeckner at stud dot htwk minus leipzig dot de>, Federico Cinelli <cinelli.federico@gmail.com>
 
 pkgname=samurai-ide-git
-pkgver=20180807
+pkgver=20220923
 pkgrel=1
 pkgdesc="Cross-platform IDE focused on Python application development - latest git pull"
 arch=('any')
@@ -41,8 +41,10 @@ package() {
   install -Dm644 "$startdir/$pkgname.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
   install -Dm644 "$startdir/samurai-ide/samurai_ide/images/icon.png" "$pkgdir/usr/share/icons/hicolor/128x128/apps/$pkgname.png"
 
-  mkdir -p "$pkgdir/usr/lib/python3.7/site-packages"
-  cp -a "$startdir/samurai-ide/samurai_ide" "$pkgdir/usr/lib/python3.7/site-packages"
+  local sitepackagesdir=$(python -c "import site; print(site.getsitepackages()[0])")
+
+  mkdir -p "$pkgdir$site_packages"
+  cp -a "$startdir/samurai-ide/samurai_ide" "$pkgdir$sitepackagesdir"
 
   mkdir -p "$pkgdir/usr/bin"
   cp -a "$startdir/samurai-ide/samurai-ide.py" "$pkgdir/usr/bin/$pkgname"
